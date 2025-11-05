@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = dotenv.get(EnvVariables.django_secret_key)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = dotenv.get(EnvVariables.isDebugMode)
+DEBUG = dotenv.get(EnvVariables.isDebugMode).lower() in ("1", "true", "yes")
 
 ALLOWED_HOSTS = ["*"]
 
