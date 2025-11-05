@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.mo
+*.db
+db.sqlite3
+media/
+staticfiles/
+
+# Environment variables
+.env
+*.env
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# PyCharm
+__pycache__/
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Migrations (optional — usually you keep these)
+# Uncomment if you want to ignore them:
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# pytest / coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+.cache/
+nosetests.xml
+coverage.xml
+
+# Static build (if you collectstatic before deploy)
+static/
