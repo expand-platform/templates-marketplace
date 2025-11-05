@@ -12,3 +12,6 @@ migrate:
 
 showmigrations:
 	poetry run python manage.py showmigrations
+
+freeze:
+	poetry run pip freeze > requirements.txt

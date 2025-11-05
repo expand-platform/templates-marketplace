@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+import dj_database_url
+from data.EnvVariables import EnvVariables
+from utils.Dotenv import dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-d4$6z@^1f_6d-o*dd=4b10wyzg=-8l58a7g5ivyn5r8r3d7q9f"
+SECRET_KEY = dotenv.get(EnvVariables.django_secret_key)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = dotenv.get(EnvVariables.isDebugMode)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -74,10 +78,7 @@ WSGI_APPLICATION = "templates_marketplace.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.config(default=dotenv.get(EnvVariables.database_url))
 }
 
 
